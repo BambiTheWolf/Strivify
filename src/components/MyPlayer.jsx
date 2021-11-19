@@ -9,18 +9,22 @@ const MyPlayer = () => (
         
             <Col md={8}>
                 <div className="player-middle">
-                    <div className="player-middle-icons">
-                        <i className="bi bi-shuffle text-light px-1"></i>
-                        <i className="bi bi-skip-start-fill text-light px-1"></i>
-                        <i className="bi bi-play-circle text-light px-1"></i>
-                        <i className="bi bi-skip-end-fill text-light px-1"></i>
-                        <i className="bi bi-arrow-repeat text-light px-1"></i>
-                    </div>
-                    <div className="player-middle-bar">
-                        <p className="time-current">0:00</p>
-                        <div className="fill mb-2"></div>
-                        <p className="time-total">0:00</p>
-                    </div>
+                    <Row>
+                        <div className="player-middle-icons">
+                            <i className="bi bi-shuffle text-light px-1"></i>
+                            <i className="bi bi-skip-start-fill text-light px-1"></i>
+                            <i className="bi bi-play-circle text-light px-1"></i>
+                            <i className="bi bi-skip-end-fill text-light px-1"></i>
+                            <i className="bi bi-arrow-repeat text-light px-1"></i>
+                        </div>
+                    </Row>
+                    <Row className="justify-content-center">
+                        <div className="player-middle-bar">
+                            <p className="time-current">0:00</p>
+                            <div className="fill mb-2"></div>
+                            <p className="time-total">0:00</p>
+                        </div>
+                    </Row>
                 </div>
             </Col>
 
