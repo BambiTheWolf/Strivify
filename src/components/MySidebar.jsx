@@ -1,5 +1,4 @@
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import { Col, Row } from 'react-bootstrap'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 const MySidebar = () => (
 
