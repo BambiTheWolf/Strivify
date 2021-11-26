@@ -32,7 +32,7 @@ const MyPlayer = () => (
                 <div className="player-right mt-3">
                     
                     <i className="bi bi-volume-up" />
-                    <div className="fill" />
+                    <div className="fill ml-2 mr-3" />
                 </div>
             </Col>
         </Row>
