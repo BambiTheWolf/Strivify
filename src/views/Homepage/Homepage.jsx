@@ -7,41 +7,39 @@ import Header from "../../components/Header/Header";
 import SingleAlbum from "../../components/SingleAlbum/SingleAlbum";
 
 const Homepage = () => {
-  const [greenDay, setGreenDay] = useState([]);
-  const [kesha, setKesha] = useState([]);
-  const [maneskin, setManeskin] = useState([]);
+  const [nanoWar, setNanoWar] = useState([]);
+  const [italianSpiderman, setItalianSpiderman] = useState([]);
+  const [lofi, setLofi] = useState([]);
   useEffect(() => {
-    fetchMusic("bruce springsteen").then((res) => setGreenDay(res));
-    fetchMusic("kesha").then((res) => setKesha(res));
-    fetchMusic("maneskin").then((res) => setManeskin(res));
+    fetchMusic("Nanowar of Steel").then((res) => setNanoWar(res));
+    fetchMusic("Italian Spiderman").then((res) => setItalianSpiderman(res));
+    fetchMusic("Lofi").then((res) => setLofi(res));
   }, []);
   return (
     <div className="home__wrap">
       <Header />
-      {/* Section 1 */}
-      <h2>The Boss 👑 </h2>
+      <h2>Nanowar of Steel 💞 </h2>
       <div className="home__line">
-        {greenDay &&
-          greenDay.slice(0, 6).map((song) => (
+        {nanoWar &&
+          nanoWar.slice(0, 6).map((song) => (
             <Link to={"album/" + song.album.id} key={song.id}>
               {" "}
               <SingleAlbum src={song.album.cover_medium} />{" "}
             </Link>
           ))}
       </div>
-      {/* Section 2 */}
-      <h2>2000s TikTok 🎶</h2>
+      <h2>Italian Spiderman OST 🕸🍝</h2>
       <div className="home__line">
-        {kesha?.slice(0, 6)?.map((song) => (
+        {italianSpiderman?.slice(0, 6)?.map((song) => (
           <Link to={"album/" + song.album.id} key={song.id}>
             {" "}
             <SingleAlbum src={song.album.cover_medium} />{" "}
           </Link>
         ))}
       </div>
-      <h2>Eurovision 🚀</h2>
+      <h2>Lo-Fi 🎶</h2>
       <div className="home__line">
-        {maneskin?.slice(0, 6)?.map((song) => (
+        {lofi?.slice(0, 6)?.map((song) => (
           <Link to={"album/" + song.album.id} key={song.id}>
             {" "}
             <SingleAlbum src={song.album.cover_medium} />{" "}
