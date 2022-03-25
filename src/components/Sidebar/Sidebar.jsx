@@ -13,9 +13,9 @@ const Sidebar = () => {
         <Link to={"/"}>
           <img src={Logo} className="logo" alt="sidebar-logo" />
         </Link>
-        <div className="menu__single selected__menu">
+        <Link to={"/"} className="menu__single selected__menu">
           <HiOutlineHome className="menu__item" /> Home
-        </div>
+        </Link>
         <div className="menu__single">
           <BsSearch className="menu__item" /> Search
         </div>
