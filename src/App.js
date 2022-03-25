@@ -1,17 +1,36 @@
-import './App.css';
-import "bootstrap/dist/css/bootstrap.min.css";
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MyPlayer from './components/MyPlayer';
-import MySidebar from './components/MySidebar'
+import { useState } from "react";
+
+import Homepage from "./views/Homepage/Homepage";
+import Player from "./components/Player/Player";
+import Sidebar from "./components/Sidebar/Sidebar";
+import AlbumPage from "./views/AlbumPage/AlbumPage";
+import ArtistPage from "./views/ArtistPage/ArtistPage";
 
 function App() {
+  const [playing, setPlaying] = useState({});
+  const handlePlaying = (track) => {
+    setPlaying(track);
+  };
   return (
     <BrowserRouter>
-      <MySidebar />
-      <MyPlayer />
+      <Sidebar />
+      <Player
+        song={{
+          title: playing?.title,
+          artist: playing?.artist?.name,
+          demo: playing?.preview,
+          cover: playing?.cover,
+        }}
+      />
       <Routes>
-        
+        <Route path="/" element={<Homepage />} />
+        <Route
+          path="/album/:id"
+          element={<AlbumPage passSong={handlePlaying} />}
+        />
+        <Route path="/artist/:id" element={<ArtistPage />} />
       </Routes>
     </BrowserRouter>
   );
